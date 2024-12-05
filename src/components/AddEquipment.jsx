@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProviders";
 
 
 const AddEquipment = () => {
+    const { user } = useContext(AuthContext);
     const handleAddEquipment = event => {
         event.preventDefault();
         const photo = event.target.photo.value;
@@ -115,14 +118,14 @@ const AddEquipment = () => {
                     <label className="label">
                         <span className="label-text">User Email</span>
                     </label>
-                    <input type="text" defaultValue='User Email' name="userName" className="input input-bordered" readOnly />
+                    <input type="text" defaultValue={user?.email} name="userName" className="input input-bordered" readOnly />
                 </div>
                 {/* photo */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Stock Name</span>
                     </label>
-                    <input type="text" defaultValue='user name' name="userEmail" className="input input-bordered" readOnly />
+                    <input type="text" defaultValue={user?.displayName} name="userEmail" className="input input-bordered" readOnly />
 
                 </div>
 

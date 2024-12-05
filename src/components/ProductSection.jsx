@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ProductSection = ({productData}) => {
    
@@ -15,7 +15,7 @@ const ProductSection = ({productData}) => {
                 <h4 className='text-xl text-lime-300'>{productData.item}</h4>
                 <p>{productData.description}</p>
                 <div className="card-actions justify-end">
-                    <Link to={`/details/${productData._id}`}><button onClick={() => handleVIewDetails(productData._id)} className="btn btn-primary">View Details</button></Link>
+                    <Link to={`/details/${productData._id}`}><button  className="btn btn-primary">View Details</button></Link>
                     
                 </div>
             </div>
