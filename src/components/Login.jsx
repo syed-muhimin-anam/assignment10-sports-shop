@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-    const { user, userLogIn } = useContext(AuthContext);
+    const { googleSignin, userLogIn, setUser } = useContext(AuthContext);
 const handleLogin = e => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -17,6 +18,20 @@ const handleLogin = e => {
         
     })
     
+}
+
+const handleGoogle = e => {
+    e.preventDefault();
+    googleSignin()
+    .then(res => {
+        setUser(res.user)
+        console.log(res.user);
+        
+    })
+    .catch(error => {
+        console.log(error.message);
+        
+    })
 }
     
 
@@ -40,6 +55,9 @@ const handleLogin = e => {
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Login</button>
+                    <h1 className="text-center">or</h1>
+                    <button onClick={handleGoogle} className="btn btn-primary">Continue With Google</button>
+                    <p>Don't have any account? <Link className="underline text-lime-400" to='/signup'>SIgnUp</Link></p>
                 </div>
             </form>
         </div>

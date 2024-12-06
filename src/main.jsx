@@ -14,6 +14,7 @@ import ViewDetails from './components/ViewDetails';
 import AuthProviders from './providers/AuthProviders';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Update from './components/Update';
 
 
 
@@ -49,7 +50,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/myEquipment",
-        element: <MyEquipment></MyEquipment>
+        element: <MyEquipment></MyEquipment>,
+        loader: () => fetch('http://localhost:5000/equipments')
 
       },
       {
@@ -58,6 +60,11 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/equipments/${params.id}`)
 
       },
+      {
+        path: '/update/:id',
+        element:<Update></Update>,
+        loader: ({ params }) => fetch(`http://localhost:5000/equipments/${params.id}`)
+      }
     ]
   },
 ]);
