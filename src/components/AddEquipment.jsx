@@ -1,142 +1,180 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
 
-
 const AddEquipment = () => {
-    const { user } = useContext(AuthContext);
-    const handleAddEquipment = event => {
-        event.preventDefault();
-        const photo = event.target.photo.value;
-        const item = event.target.item.value;
-        const category = event.target.category.value;
-        const description = event.target.description.value;
-        const rating = event.target.rating.value;
-        const price = event.target.price.value;
-        const customization = event.target.customization.value;
-        const time = event.target.time.value;
-        const stock = event.target.stock.value;
-        const userName = event.target.userName.value;
-        const userEmail = event.target.userEmail.value;
-        const equipmentData = {
-            photo,
-            item,
-            category,
-            description,
-            rating,
-            price,
-            customization,
-            time,
-            stock,
-            userName,
-            userEmail
-        }
-       fetch('http://localhost:5000/equipments', {
-        method: 'POST',
-        headers: {
-             'content-type': 'application/json'
-        },
-        body: JSON.stringify(equipmentData)
-       })
-       .then(res => res.json())
-       .then(data => {
+  const { user } = useContext(AuthContext);
+
+  const handleAddEquipment = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const equipmentData = {
+      photo: form.photo.value,
+      item: form.item.value,
+      category: form.category.value,
+      description: form.description.value,
+      rating: form.rating.value,
+      price: form.price.value,
+      customization: form.customization.value,
+      time: form.time.value,
+      stock: form.stock.value,
+      userName: form.userName.value,
+      userEmail: form.userEmail.value,
+    };
+
+    fetch("http://localhost:5000/equipments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(equipmentData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-        
-       })
-    }
-    return (
-        <div>
-            <h1>Add Equipment</h1>
-            <form className="card-body" onSubmit={handleAddEquipment}>
-                {/* photo */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Photo</span>
-                    </label>
-                    <input type="text" placeholder="photo url" name="photo" className="input input-bordered" required />
-                </div>
-                {/* item name */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Item name</span>
-                    </label>
-                    <input type="text" placeholder="photo url" name="item" className="input input-bordered" required />
-                </div>
-                {/* Categoryname */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Category Name</span>
-                    </label>
-                    <input type="text" placeholder="photo url" name="category" className="input input-bordered" required />
-                </div>
-                {/* Description */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Description</span>
-                    </label>
-                    <input type="text" placeholder="photo url" name="description" className="input input-bordered" required />
-                </div>
-                {/* Price */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Price</span>
-                    </label>
-                    <input type="text" placeholder="photo url" name="price" className="input input-bordered" required />
-                </div>
-                {/* Rating */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Rating</span>
-                    </label>
-                    <input type="text" placeholder="photo url" name="rating" className="input input-bordered" required />
-                </div>
-                {/* Customization  */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Customization </span>
-                    </label>
-                    <input type="text" placeholder="photo url" name="customization" className="input input-bordered" required />
-                </div>
-                {/* Processing Time */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Processing Time</span>
-                    </label>
-                    <input type="text" placeholder="photo url" name="time" className="input input-bordered" required />
-                </div>
-                {/* Stock Status */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Stock Status</span>
-                    </label>
-                    <input type="text" placeholder="photo url" name="stock" className="input input-bordered" required />
-                </div>
+      });
+  };
 
-
-
-                {/* user email */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">User Email</span>
-                    </label>
-                    <input type="text" defaultValue={user?.email} name="userEmail" className="input input-bordered" readOnly />
-                </div>
-                {/* user name */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text"> Name</span>
-                    </label>
-                    <input type="text" defaultValue={user?.displayName} name="userName" className="input input-bordered" readOnly />
-
-                </div>
-
-
-                {/* add equipment */}
-                <div className="form-control mt-6">
-                    <button className="btn btn-primary">Add Equipment</button>
-                </div>
-            </form>
-        </div>
-    );
+  return (
+    <div className="min-h-screen flex items-center justify-center py-10 px-4">
+      <div className="max-w-4xl w-full  rounded-lg shadow-lg p-8">
+        <h1 className="text-2xl md:text-3xl font-bold  mb-6 text-center">
+          Add New Equipment
+        </h1>
+        <form onSubmit={handleAddEquipment} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Photo URL */}
+          <div>
+            <label className="block  font-medium mb-1">Photo URL</label>
+            <input
+              type="text"
+              name="photo"
+              placeholder="Enter photo URL"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          {/* Item Name */}
+          <div>
+            <label className="block  font-medium mb-1">Item Name</label>
+            <input
+              type="text"
+              name="item"
+              placeholder="Enter item name"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          {/* Category Name */}
+          <div>
+            <label className="block  font-medium mb-1">Category Name</label>
+            <input
+              type="text"
+              name="category"
+              placeholder="Enter category name"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          {/* Description */}
+          <div>
+            <label className="block  font-medium mb-1">Description</label>
+            <input
+              type="text"
+              name="description"
+              placeholder="Enter description"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          {/* Price */}
+          <div>
+            <label className="block  font-medium mb-1">Price</label>
+            <input
+              type="text"
+              name="price"
+              placeholder="Enter price"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          {/* Rating */}
+          <div>
+            <label className="block  font-medium mb-1">Rating</label>
+            <input
+              type="text"
+              name="rating"
+              placeholder="Enter rating"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          {/* Customization */}
+          <div>
+            <label className="block  font-medium mb-1">Customization</label>
+            <input
+              type="text"
+              name="customization"
+              placeholder="Enter customization details"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          {/* Processing Time */}
+          <div>
+            <label className="block  font-medium mb-1">Processing Time</label>
+            <input
+              type="text"
+              name="time"
+              placeholder="Enter processing time"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          {/* Stock Status */}
+          <div>
+            <label className="block  font-medium mb-1">Stock Status</label>
+            <input
+              type="text"
+              name="stock"
+              placeholder="Enter stock status"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          {/* User Email */}
+          <div>
+            <label className="block  font-medium mb-1">User Email</label>
+            <input
+              type="text"
+              name="userEmail"
+              defaultValue={user?.email}
+              className="w-full px-4 py-2 border  rounded-lg"
+              readOnly
+            />
+          </div>
+          {/* User Name */}
+          <div>
+            <label className="block  font-medium mb-1">User Name</label>
+            <input
+              type="text"
+              name="userName"
+              defaultValue={user?.displayName}
+              className="w-full px-4 py-2 border  rounded-lg"
+              readOnly
+            />
+          </div>
+          {/* Submit Button */}
+          <div className="col-span-1 md:col-span-2 mt-4">
+            <button
+              type="submit"
+              className="w-full py-3 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-400"
+            >
+              Add Equipment
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default AddEquipment;

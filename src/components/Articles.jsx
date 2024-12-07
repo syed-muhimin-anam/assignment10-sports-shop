@@ -3,7 +3,7 @@ import cycle from '../assets/a-cycle.jpg';
 
 const Articles = () => {
     return (
-        <div className='grid grid-cols-2 gap-10'>
+        <div className='grid md:grid-cols-2 gap-10'>
             <div className="card card-side bg-base-100 shadow-xl">
             <figure>
                 <img

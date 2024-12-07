@@ -34,7 +34,7 @@ const NavBar = () => {
         <div className="navbar bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div tabIndex={50} role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -49,21 +49,21 @@ const NavBar = () => {
                         </svg>
                     </div>
                     <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        tabIndex={50}
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow">
                         {item}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Dream Sports Shop</a>
+                <a className="text-sm md:text-xl">Dream Sports Shop</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {item}
                 </ul>
             </div>
-            <div className="navbar-end flex items-center space-x-4">
+            <div className="navbar-end flex items-center space-x-1 md:space-x-4">
               
-                <button onClick={toggleTheme} className="btn">
+                <button onClick={toggleTheme} className="btn btn-xs md:btn-md">
                     {theme === true ? "Dark Mode" : "Light Mode"}
                 </button>
 
@@ -84,12 +84,12 @@ const NavBar = () => {
                                     {user?.displayName}
                                 </span>
                             </div>
-                            <button onClick={handleLogout} className="btn">Logout</button>
+                            <button onClick={handleLogout} className="btn btn-xs md:btn-md">Logout</button>
                         </>
                     ) : (
                         <>
-                            <Link to='/login'><button className="btn">Sign in</button></Link>
-                            <Link to='/signup'><button className='btn'>Register</button></Link>
+                            <Link to='/login'><button className="btn btn-xs md:btn-md">Sign in</button></Link>
+                            <Link to='/signup'><button className='btn btn-xs md:btn-md'>Register</button></Link>
                         </>
                     )
                 }

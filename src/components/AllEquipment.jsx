@@ -6,52 +6,63 @@ import { AuthContext } from "../providers/AuthProviders";
 const AllEquipment = () => {
   const initialData = useLoaderData();
   const [allEquipmentsData, setAllEquipmentsData] = useState(initialData);
-  const {loading, setLoading} = useContext(AuthContext);
+  const { loading, setLoading } = useContext(AuthContext);
 
   const handleSort = () => {
-    setLoading(true); 
+    setLoading(true);
 
     fetch("http://localhost:5000/equipments/sort")
       .then((response) => response.json())
       .then((sortedData) => {
-        setAllEquipmentsData(sortedData); 
-        setLoading(false); 
+        setAllEquipmentsData(sortedData);
+        setLoading(false);
       })
       .catch((error) => {
         console.error(error);
-        setLoading(false); 
+        setLoading(false);
       });
   };
 
- 
   if (loading) {
     return <Loading />;
   }
 
   return (
-    <div>
-      <button onClick={handleSort} className="btn">Sort</button>
+    <div className="px-4 sm:px-6 lg:px-8">
+      <div className="mb-4 flex justify-end">
+        <button onClick={handleSort} className="btn">
+          Sort
+        </button>
+      </div>
       <div className="overflow-x-auto">
-        <table className="table table-zebra">
+        <table className="table-auto w-full border-collapse border border-gray-300">
           <thead>
             <tr>
-              <th>SL</th>
-              <th>Category</th>
-              <th>Item</th>
-              <th>Price</th>
-              <th>Stock</th>
-              <th>Details</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">SL</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">Category</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">Item</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">Price</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">Stock</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">Details</th>
             </tr>
           </thead>
           <tbody>
             {allEquipmentsData.map((equipmentData, index) => (
               <tr key={equipmentData._id}>
-                <th>{index + 1}</th>
-                <td>{equipmentData.category}</td>
-                <td>{equipmentData.item}</td>
-                <td>{equipmentData.price}</td>
-                <td>{equipmentData.stock}</td>
-                <td>
+                <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {equipmentData.category}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {equipmentData.item}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {equipmentData.price}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {equipmentData.stock}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
                   <Link to={`/details/${equipmentData._id}`}>
                     <button className="btn">View Details</button>
                   </Link>
