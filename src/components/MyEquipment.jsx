@@ -16,7 +16,7 @@ const MyEquipment = () => {
         .then(data => {
             console.log(data);
             
-            window.location.href = '/';
+           
         })
        
     };

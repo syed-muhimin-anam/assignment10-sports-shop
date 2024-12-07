@@ -1,9 +1,12 @@
+
 import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
-import { Link } from "react-router-dom";
 
 const Login = () => {
     const { googleSignin, userLogIn, setUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 const handleLogin = e => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -12,6 +15,8 @@ const handleLogin = e => {
     userLogIn(email, password)
     .then(res => {
         setUser(res.user);
+      navigate(location?.state? location.state : '/')
+   
     })
     .catch(error => {
         console.log(error.message);
@@ -25,6 +30,8 @@ const handleGoogle = e => {
     googleSignin()
     .then(res => {
         setUser(res.user)
+        navigate(location?.state? location.state : '/')
+       
         console.log(res.user);
         
     })

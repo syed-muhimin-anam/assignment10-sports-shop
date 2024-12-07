@@ -15,19 +15,20 @@ import AuthProviders from './providers/AuthProviders';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Update from './components/Update';
-
+import PrivateROuter from './components/PrivateROuter';
+import ErrorPage from './components/ErrorPage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>, // Handles errors such as loader failures
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/six-equipments')
-
+        loader: () => fetch('http://localhost:5000/six-equipments'),
       },
       {
         path: "/login",
@@ -40,34 +41,31 @@ const router = createBrowserRouter([
       {
         path: "/allEquipment",
         element: <AllEquipment></AllEquipment>,
-        loader: () => fetch('http://localhost:5000/equipments')
-
+        loader: () => fetch('http://localhost:5000/equipments'),
       },
       {
         path: "/addEquipment",
-        element: <AddEquipment></AddEquipment>
-
+        element: <PrivateROuter><AddEquipment></AddEquipment></PrivateROuter>,
       },
       {
         path: "/myEquipment",
-        element: <MyEquipment></MyEquipment>,
-        loader: () => fetch('http://localhost:5000/equipments')
-
+        element: <PrivateROuter><MyEquipment></MyEquipment></PrivateROuter>,
+        loader: () => fetch('http://localhost:5000/equipments'),
       },
       {
         path: "/details/:id",
-        element: <ViewDetails></ViewDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/equipments/${params.id}`)
-
+        element: <PrivateROuter><ViewDetails></ViewDetails></PrivateROuter>,
+        loader: ({ params }) => fetch(`http://localhost:5000/equipments/${params.id}`),
       },
       {
         path: '/update/:id',
-        element:<Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:5000/equipments/${params.id}`)
-      }
-    ]
+        element: <PrivateROuter><Update></Update></PrivateROuter>,
+        loader: ({ params }) => fetch(`http://localhost:5000/equipments/${params.id}`),
+      },
+    ],
   },
 ]);
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
