@@ -1,18 +1,23 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
 import { Link, useLoaderData } from "react-router-dom";
+import Loading from "./Loading";
 
 
 const MyEquipment = () => {
     const myEquipments = useLoaderData();
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const filteredEquipments = myEquipments.filter(myEquipment => myEquipment.userEmail === user?.email);
     
     const handleDelete = (_id) => {
         fetch(`http://localhost:5000/equipments/${_id}`, {
             method: 'DELETE',
         })
-        .then(res => res.json())
+        .then(res =>{
+            if (loading === true) {
+                return <Loading></Loading>
+              }
+            res.json()})
         .then(data => {
             console.log(data);
             

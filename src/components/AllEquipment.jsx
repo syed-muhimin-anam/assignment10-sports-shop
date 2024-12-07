@@ -1,25 +1,38 @@
 import { Link, useLoaderData } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import Loading from "./Loading";
+import { AuthContext } from "../providers/AuthProviders";
 
 const AllEquipment = () => {
-
   const initialData = useLoaderData();
   const [allEquipmentsData, setAllEquipmentsData] = useState(initialData);
-
+  const {loading, setLoading} = useContext(AuthContext);
 
   const handleSort = () => {
+    setLoading(true); 
+
     fetch("http://localhost:5000/equipments/sort")
       .then((response) => response.json())
-      .then((sortedData) => setAllEquipmentsData(sortedData))
-      .catch((error) => console.log(error));
+      .then((sortedData) => {
+        setAllEquipmentsData(sortedData); 
+        setLoading(false); 
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false); 
+      });
   };
+
+ 
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div>
       <button onClick={handleSort} className="btn">Sort</button>
       <div className="overflow-x-auto">
         <table className="table table-zebra">
-    
           <thead>
             <tr>
               <th>SL</th>
@@ -30,7 +43,6 @@ const AllEquipment = () => {
               <th>Details</th>
             </tr>
           </thead>
-        
           <tbody>
             {allEquipmentsData.map((equipmentData, index) => (
               <tr key={equipmentData._id}>

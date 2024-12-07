@@ -10,6 +10,10 @@ const Root = () => {
             <header>
                 <NavBar></NavBar>
             </header>
+            
+            
+
+            
 
            
             <Outlet></Outlet>
