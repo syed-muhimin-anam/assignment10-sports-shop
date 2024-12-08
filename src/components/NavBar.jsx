@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../providers/AuthProviders';import Swal from 'sweetalert2'
+import { AuthContext } from '../providers/AuthProviders'; import Swal from 'sweetalert2'
+import { Tooltip } from 'react-tooltip'
 
 const NavBar = () => {
     const [theme, setTheme] = useState(true)
@@ -22,14 +23,14 @@ const NavBar = () => {
             timer: 3000,
             timerProgressBar: true,
             didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
             }
-          });
-          Toast.fire({
+        });
+        Toast.fire({
             icon: "success",
             title: "Loged Out successfully"
-          });
+        });
     };
 
     const toggleTheme = () => {
@@ -77,16 +78,19 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex items-center space-x-1 md:space-x-4">
-              
+
                 <button onClick={toggleTheme} className="btn btn-xs md:btn-md">
                     {theme === true ? "Dark Mode" : "Light Mode"}
                 </button>
 
-          
+
                 {
                     user && user.email ? (
                         <>
-                            <div className="relative group">
+                            <div className="relative group" 
+                            data-tooltip-id="my-tooltip"
+                                data-tooltip-content={user.displayName}
+                                data-tooltip-place="top">
                                 <div role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
                                         <img
@@ -95,9 +99,7 @@ const NavBar = () => {
                                         />
                                     </div>
                                 </div>
-                                <span className="w-72 text-center absolute top-10 left-6 transform -translate-x-1/2 mt-2 text-sm font-medium text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    {user?.displayName}
-                                </span>
+
                             </div>
                             <button onClick={handleLogout} className="btn btn-xs md:btn-md">Logout</button>
                         </>
@@ -109,6 +111,7 @@ const NavBar = () => {
                     )
                 }
             </div>
+            <Tooltip id="my-tooltip" />
         </div>
     );
 };
