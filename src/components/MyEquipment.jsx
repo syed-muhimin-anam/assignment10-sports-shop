@@ -61,6 +61,7 @@ const MyEquipment = () => {
                                 <img
                                     src={equipment.photo}
                                     alt="Equipment"
+                                    className="w-auto h-full object-contain"
                                 />
                             </figure>
                             <div className="card-body">
