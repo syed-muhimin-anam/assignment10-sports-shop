@@ -11,26 +11,16 @@ const Update = () => {
   const handleUpdateEquipment = (event) => {
     event.preventDefault();
 
-    const photo =
-      event.target.photo.value === "" ? loadedEquipment.photo : event.target.photo.value;
-    const item =
-      event.target.item.value === "" ? loadedEquipment.item : event.target.item.value;
+    const photo = event.target.photo.value === "" ? loadedEquipment.photo : event.target.photo.value;
+    const item =event.target.item.value === "" ? loadedEquipment.item : event.target.item.value;
     const category =
-      event.target.category.value === "" ? loadedEquipment.category : event.target.category.value;
-    const description =
-      event.target.description.value === "" ? loadedEquipment.description : event.target.description.value;
-    const rating =
-      event.target.rating.value === "" ? loadedEquipment.rating : event.target.rating.value;
-    const price =
-      event.target.price.value === "" ? loadedEquipment.price : event.target.price.value;
-    const customization =
-      event.target.customization.value === ""
-        ? loadedEquipment.customization
-        : event.target.customization.value;
-    const time =
-      event.target.time.value === "" ? loadedEquipment.time : event.target.time.value;
-    const stock =
-      event.target.stock.value === "" ? loadedEquipment.stock : event.target.stock.value;
+     event.target.category.value === "" ? loadedEquipment.category : event.target.category.value;
+    const description = event.target.description.value === "" ? loadedEquipment.description : event.target.description.value;
+    const rating = event.target.rating.value === "" ? loadedEquipment.rating : event.target.rating.value;
+    const price = event.target.price.value === "" ? loadedEquipment.price :  parseFloat(event.target.rating.value);
+    const customization = event.target.customization.value === "" ? loadedEquipment.customization : event.target.customization.value;
+    const time = event.target.time.value === "" ? loadedEquipment.time : event.target.time.value;
+    const stock = event.target.stock.value === "" ? loadedEquipment.stock : event.target.stock.value;
 
     const equipmentData = {
       photo,

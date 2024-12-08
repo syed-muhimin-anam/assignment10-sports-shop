@@ -10,15 +10,21 @@ const AllEquipment = () => {
 
   const handleSort = () => {
     setLoading(true);
-    const sortedData = [...allEquipmentsData].sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-    setAllEquipmentsData(sortedData);
-    setLoading(false);
+    fetch("https://sports-equipment-store-server-blue.vercel.app/equipments/sort")
+      .then((response) => response.json())
+      .then((sortedData) => {
+        setAllEquipmentsData(sortedData);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
+      });
   };
 
   if (loading) {
     return <Loading />;
   }
-
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="mb-4 ">

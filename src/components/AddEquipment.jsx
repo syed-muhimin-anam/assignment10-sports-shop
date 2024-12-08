@@ -18,7 +18,7 @@ const AddEquipment = () => {
       category: form.category.value,
       description: form.description.value,
       rating: form.rating.value,
-      price: form.price.value,
+      price: parseFloat(form.price.value),
       customization: form.customization.value,
       time: form.time.value,
       stock: form.stock.value,
