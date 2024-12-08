@@ -7,7 +7,7 @@ import Loading from "./Loading";
 const MyEquipment = () => {
     const myEquipments = useLoaderData();
     const { user, loading } = useContext(AuthContext);
- 
+
     const filteredEquipments = myEquipments.filter(
         (myEquipment) => myEquipment.userEmail === user?.email
     );
@@ -22,31 +22,31 @@ const MyEquipment = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success"
-              });
-              fetch(`https://sports-equipment-store-server-blue.vercel.app/equipments/${_id}`, {
-                method: "DELETE",
-            })
-                .then((res) => {
-                    if (loading === true) {
-                        return <Loading />;
-                    }
-                    return res.json();
-                })
-                .then((data) => {
-                    if (data.deletedCount > 0) {
-                        const remaining = myItem.filter((item) => item._id !== _id);
-                        setMyItem(remaining);
-                    }
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
                 });
+                fetch(`https://sports-equipment-store-server-blue.vercel.app/equipments/${_id}`, {
+                    method: "DELETE",
+                })
+                    .then((res) => {
+                        if (loading === true) {
+                            return <Loading />;
+                        }
+                        return res.json();
+                    })
+                    .then((data) => {
+                        if (data.deletedCount > 0) {
+                            const remaining = myItem.filter((item) => item._id !== _id);
+                            setMyItem(remaining);
+                        }
+                    });
             }
-          });
-      
+        });
+
     };
 
     return (

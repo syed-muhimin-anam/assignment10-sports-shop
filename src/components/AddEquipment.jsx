@@ -50,7 +50,7 @@ const AddEquipment = () => {
   return (
     <div className="min-h-screen flex items-center justify-center  px-4">
       <div className="max-w-4xl w-full  rounded-lg shadow-lg p-8">
-      
+
         <h1 className="text-2xl md:text-3xl font-bold  my-10 text-center">
           Add New Equipment
         </h1>

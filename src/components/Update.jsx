@@ -45,7 +45,7 @@ const Update = () => {
       userName: user?.displayName,
       userEmail: user?.email,
     };
-    
+
 
     fetch(`https://sports-equipment-store-server-blue.vercel.app/equipments/${loadedEquipment._id}`, {
       method: "PATCH",
@@ -60,7 +60,7 @@ const Update = () => {
           title: "Congratulations!",
           text: "successfully updated your item!",
           icon: "success"
-          
+
         });
 
         event.target.reset();

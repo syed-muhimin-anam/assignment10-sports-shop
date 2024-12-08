@@ -10,15 +10,15 @@ const Root = () => {
             <header>
                 <NavBar></NavBar>
             </header>
-            
-            
 
-            
 
-           
+
+
+
+
             <Outlet></Outlet>
-            
-            
+
+
 
             <footer className="w-full">
                 <Footer></Footer>
