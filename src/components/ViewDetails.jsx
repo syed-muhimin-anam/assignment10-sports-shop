@@ -4,7 +4,10 @@ const ViewDetails = () => {
     const equipmentsDetails = useLoaderData();
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center bg-base-100 shadow-xl">
+        <div>
+            <h1 className="text-2xl font-bold my-5 text-center">Details</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center bg-base-100 shadow-xl">
+            
             <figure className="w-full h-64 overflow-hidden flex items-center justify-center">
                 <img
                     src={equipmentsDetails.photo}
@@ -27,6 +30,7 @@ const ViewDetails = () => {
                     </Link>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
