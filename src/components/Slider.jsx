@@ -43,7 +43,7 @@ const Slider = () => {
             }}
           >
             <div className="grid md:grid-cols-4 items-center">
-              <div className="space-y-2">
+              <div className="space-y-2 hidden md:block">
                 <h1 className="text-xl md:text-3xl lg:text-4xl">
                   New Tracksuit For Woman
                 </h1>
@@ -57,7 +57,7 @@ const Slider = () => {
                 alt="Slider 1"
                 className="mx-auto w-10/12 md:w-full col-span-2 h-auto rounded-md"
               />
-              <div className="ml-5 space-y-2">
+              <div className="ml-5 space-y-2 hidden md:block">
                 <h1 className="text-lg md:text-2xl lg:text-3xl">
                   Or you can buy the whole kit at once
                 </h1>
@@ -85,7 +85,7 @@ const Slider = () => {
             }}
           >
             <div className="grid md:grid-cols-4 items-center">
-              <div className="space-y-2">
+              <div className="space-y-2 hidden md:block">
                 <h1 className="text-xl md:text-3xl lg:text-4xl">
                   Professional Gym Equipment
                 </h1>
@@ -99,7 +99,7 @@ const Slider = () => {
                 alt="Slider 2"
                 className="mx-auto w-10/12 md:w-full col-span-2 h-auto rounded-md"
               />
-              <div className="ml-5 space-y-2">
+              <div className="ml-5 space-y-2 hidden md:block">
                 <h1 className="text-lg md:text-2xl lg:text-3xl">
                   Or you can buy the whole kit at once
                 </h1>
@@ -127,7 +127,7 @@ const Slider = () => {
             }}
           >
             <div className="grid md:grid-cols-4 items-center">
-              <div className="space-y-2">
+              <div className="space-y-2 hidden md:block">
                 <h1 className="text-xl md:text-3xl lg:text-4xl">
                   Weights of Distribution
                 </h1>
@@ -141,7 +141,7 @@ const Slider = () => {
                 alt="Slider 3"
                 className="mx-auto w-10/12 md:w-full col-span-2 h-auto rounded-md"
               />
-              <div className="ml-5 space-y-2">
+              <div className="ml-5 space-y-2 hidden md:block">
                 <h1 className="text-lg md:text-2xl lg:text-3xl">
                   Or you can buy the whole kit at once
                 </h1>

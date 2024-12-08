@@ -20,21 +20,24 @@ const Home = () => {
     return (
         <div>
            <Slider></Slider>
-            <h1>Product section</h1>
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-           {
+            
+           <div className="space-y-10 mt-16" >
+           <h1 className="text-4xl text-center">Product section</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {
                 productSectionData.map(productData => <ProductSection productData={productData}></ProductSection>)
             }
+          </div>
            </div>
-           <div>
-            <h1>Sports Category</h1>
+           <div className="space-y-5 mt-10">
+            <h1 className="text-2xl text-center">Sports Category</h1>
             <SportsCategory></SportsCategory>
            </div>
-           <div>
-            <h1>Articles</h1>
+           <div className="mt-10 space-y-10">
+            <h1 className="text-4xl text-center">Articles</h1>
             <Articles></Articles>
            </div>
-           <div >
+           <div className="mt-10">
             <Popular></Popular>
            </div>
 
