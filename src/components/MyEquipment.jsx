@@ -50,7 +50,7 @@ const MyEquipment = () => {
     };
 
     return (
-        <div className="min-h-screen">
+        <div className='min-h-[calc(100vh-405px)]'>
 
             <h1 className="text-4xl text-center my-10">My Equipment: Total - {myItem.length}</h1>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
