@@ -10,17 +10,9 @@ const AllEquipment = () => {
 
   const handleSort = () => {
     setLoading(true);
-
-    fetch("https://sports-equipment-store-server-blue.vercel.app/equipments/sort")
-      .then((response) => response.json())
-      .then((sortedData) => {
-        setAllEquipmentsData(sortedData);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false);
-      });
+    const sortedData = [...allEquipmentsData].sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+    setAllEquipmentsData(sortedData);
+    setLoading(false);
   };
 
   if (loading) {
@@ -29,7 +21,7 @@ const AllEquipment = () => {
 
   return (
     <div className="px-4 sm:px-6 lg:px-8">
-      <div className="mb-4 flex justify-end">
+      <div className="mb-4 ">
         <button onClick={handleSort} className="btn">
           Sort
         </button>
