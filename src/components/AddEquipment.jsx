@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const handleAddEquipment = (event) => {
     event.preventDefault();
@@ -30,7 +33,15 @@ const AddEquipment = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        Swal.fire({
+          title: "Congratulations!",
+          text: "successfully added your item!",
+          icon: "success"
+          
+        });
+        event.target.reset();
+        navigate('/')
+
       });
   };
 

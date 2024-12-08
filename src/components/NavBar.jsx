@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../providers/AuthProviders';
+import { AuthContext } from '../providers/AuthProviders';import Swal from 'sweetalert2'
 
 const NavBar = () => {
     const [theme, setTheme] = useState(true)
@@ -15,6 +15,21 @@ const NavBar = () => {
 
     const handleLogout = () => {
         logout();
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Loged Out successfully"
+          });
     };
 
     const toggleTheme = () => {

@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const Update = () => {
   const { user } = useContext(AuthContext);
   const loadedEquipment = useLoaderData();
 
+  const navigate = useNavigate()
   const handleUpdateEquipment = (event) => {
     event.preventDefault();
 
@@ -43,6 +45,7 @@ const Update = () => {
       userName: user?.displayName,
       userEmail: user?.email,
     };
+    
 
     fetch(`http://localhost:5000/equipments/${loadedEquipment._id}`, {
       method: "PATCH",
@@ -53,7 +56,15 @@ const Update = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        Swal.fire({
+          title: "Congratulations!",
+          text: "successfully updated your item!",
+          icon: "success"
+          
+        });
+
+        event.target.reset();
+        navigate('/')
       });
   };
 

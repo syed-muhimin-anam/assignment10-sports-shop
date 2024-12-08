@@ -1,18 +1,26 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
+
 
 
 const Signup = () => {
     const {createUser, setUser, updateUserProfile, user} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleCreateUser = event => {
         event.preventDefault(); 
         const name = event.target.name.value;
         const email = event.target.email.value;
         const photo = event.target.photo.value;
         const password = event.target.password.value;
-      
-       
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+   
+              
+
+
+      if (passwordRegex.test(password)) {
         createUser(email, password)
         .then((res) => {
             const newUser = res.user;
@@ -20,20 +28,71 @@ const Signup = () => {
                 .then(() => {
                     setUser({ ...newUser, displayName: name, photoURL: photo });
                     event.target.reset();
-                    console.log("User created and updated:", newUser);
+                    navigate(location?.state? location.state : '/')
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                          toast.onmouseenter = Swal.stopTimer;
+                          toast.onmouseleave = Swal.resumeTimer;
+                        }
+                      });
+                      Toast.fire({
+                        icon: "success",
+                        title: "Successfully Registered Your account"
+                      });
                 });
+                
         })
         .catch((err) => {
-            console.error("Signup error:", err.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
+                }
+              });
+              Toast.fire({
+                icon: "error",
+                title: err.message
+              });
+          
         });
+      }
+      else{
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "error",
+            title: 'your password is too weak. please include one uppercase , one lowercase, and 6 char long.'
+          });
+      }
+       
+
     
         
 
-        
+         
         
     }
     return (
-        <div>
+        <div className="md:w-8/12 mx-auto">
              <form onSubmit={handleCreateUser} className="card-body">
                 <div className="form-control">
                     <label className="label">
