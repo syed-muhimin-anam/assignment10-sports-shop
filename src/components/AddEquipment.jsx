@@ -26,7 +26,7 @@ const AddEquipment = () => {
       userEmail: form.userEmail.value,
     };
 
-    fetch("http://localhost:5000/equipments", {
+    fetch("https://sports-equipment-store-server-blue.vercel.app/equipments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

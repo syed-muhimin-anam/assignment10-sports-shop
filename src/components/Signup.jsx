@@ -95,6 +95,7 @@ const Signup = () => {
     }
     return (
         <div className="md:w-8/12 mx-auto">
+            <h1 className="text-2xl font-bold text-center my-5">Register</h1>
             <Fade >
              <form onSubmit={handleCreateUser} className="card-body">
                 <div className="form-control">
@@ -124,7 +125,7 @@ const Signup = () => {
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Signup</button>
-                    <p>Already have an account? <Link className="underline text-lime-400" to='/login'>Login</Link></p>
+                    <p>Already have an account? <Link className="underline text-blue-500" to='/login'>Login</Link></p>
                 </div>
             </form>
             </Fade>

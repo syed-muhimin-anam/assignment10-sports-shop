@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProviders';
 import Swal from 'sweetalert2';
 import { Tooltip } from 'react-tooltip';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const NavBar = () => {
     const [theme, setTheme] = useState(true);
@@ -77,8 +78,8 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex items-center space-x-1 md:space-x-4">
-                <button onClick={toggleTheme} className="btn btn-xs md:btn-md">
-                    {theme === true ? "Dark Mode" : "Light Mode"}
+            <button onClick={toggleTheme}  className={`rounded-full p-2 ${theme ? 'bg-slate-300' : 'bg-slate-900'}`}>
+                    {theme === true ? <FaMoon></FaMoon>  : <FaSun></FaSun>}
                 </button>
                 {
                     user && user.email ? (

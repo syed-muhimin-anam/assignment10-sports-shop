@@ -47,7 +47,7 @@ const Update = () => {
     };
     
 
-    fetch(`http://localhost:5000/equipments/${loadedEquipment._id}`, {
+    fetch(`https://sports-equipment-store-server-blue.vercel.app/equipments/${loadedEquipment._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

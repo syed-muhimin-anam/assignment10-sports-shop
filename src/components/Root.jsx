@@ -20,7 +20,7 @@ const Root = () => {
             
             
 
-            <footer>
+            <footer className="w-full">
                 <Footer></Footer>
             </footer>
         </div>

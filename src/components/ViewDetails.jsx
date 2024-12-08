@@ -1,35 +1,33 @@
 import { Link, useLoaderData } from "react-router-dom";
 
-
 const ViewDetails = () => {
     const equipmentsDetails = useLoaderData();
 
-
-
-
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
-            <figure>
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center bg-base-100 shadow-xl">
+            <figure className="w-full h-64 overflow-hidden flex items-center justify-center">
                 <img
-                    src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
-                    alt="Album" />
+                    src={equipmentsDetails.photo}
+                    alt="image"
+                    className="w-auto h-full object-contain"
+                />
             </figure>
             <div className="card-body">
-            <h1>Category: {equipmentsDetails.category}</h1>
-            <h1>Item: {equipmentsDetails.item}</h1>
-            <h1>Price: {equipmentsDetails.price}</h1>
-           <h1>rating: {equipmentsDetails.rating}</h1>
-           <h1>customization: {equipmentsDetails.customization}</h1>
-           <h1>time: {equipmentsDetails.time}</h1>
-           <h1>stock: {equipmentsDetails.stock}</h1>
-           <h1>Description: {equipmentsDetails.description}</h1>
+                <h1 className="text-lg font-bold">Category: <span className="font-normal">{equipmentsDetails.category}</span></h1>
+                <h1 className="text-lg font-bold">Item: <span className="font-normal">{equipmentsDetails.item}</span></h1>
+                <h1 className="text-lg font-bold">Price: <span className="font-normal">{equipmentsDetails.price}</span></h1>
+                <h1 className="text-lg font-bold">Rating: <span className="font-normal">{equipmentsDetails.rating}</span></h1>
+                <h1 className="text-lg font-bold">Customization: <span className="font-normal">{equipmentsDetails.customization}</span></h1>
+                <h1 className="text-lg font-bold">Time: <span className="font-normal">{equipmentsDetails.time}</span></h1>
+                <h1 className="text-lg font-bold">Stock: <span className="font-normal">{equipmentsDetails.stock}</span></h1>
+                <h1 className="text-lg font-bold">Description: <span className="font-normal">{equipmentsDetails.description}</span></h1>
                 <div className="card-actions justify-end">
-                    <Link to={'/'}>   <button className="btn btn-neutral">Back</button></Link>
-                  
+                    <Link to={'/'}>
+                        <button className="btn btn-neutral">Home</button>
+                    </Link>
                 </div>
             </div>
         </div>
-
     );
 };
 

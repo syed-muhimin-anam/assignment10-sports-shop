@@ -90,6 +90,7 @@ const handleGoogle = e => {
 
     return (
         <div className="md:w-8/12 mx-auto">
+            <h1 className="text-2xl font-bold text-center my-5">Login</h1>
             <Fade>
             <form onSubmit={handleLogin} className="card-body">
                 <div className="form-control">
@@ -111,7 +112,7 @@ const handleGoogle = e => {
                     <button className="btn btn-primary">Login</button>
                     <h1 className="text-center">or</h1>
                     <button onClick={handleGoogle} className="btn btn-primary">Continue With Google</button>
-                    <p>Don't have any account? <Link className="underline text-lime-400" to='/signup'>SIgnUp</Link></p>
+                    <p>Don't have any account? <Link className="underline text-blue-500" to='/signup'>Register</Link></p>
                 </div>
             </form>
             </Fade>

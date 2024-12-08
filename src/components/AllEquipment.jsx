@@ -11,7 +11,7 @@ const AllEquipment = () => {
   const handleSort = () => {
     setLoading(true);
 
-    fetch("http://localhost:5000/equipments/sort")
+    fetch("https://sports-equipment-store-server-blue.vercel.app/equipments/sort")
       .then((response) => response.json())
       .then((sortedData) => {
         setAllEquipmentsData(sortedData);

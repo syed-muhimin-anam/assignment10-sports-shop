@@ -29,7 +29,7 @@ const MyEquipment = () => {
                 text: "Your file has been deleted.",
                 icon: "success"
               });
-              fetch(`http://localhost:5000/equipments/${_id}`, {
+              fetch(`https://sports-equipment-store-server-blue.vercel.app/equipments/${_id}`, {
                 method: "DELETE",
             })
                 .then((res) => {
@@ -50,7 +50,8 @@ const MyEquipment = () => {
     };
 
     return (
-        <div>
+        <div className="min-h-screen">
+
             <h1 className="text-4xl text-center my-10">My Equipment: Total - {myItem.length}</h1>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
                 {myItem.map((equipment) => (

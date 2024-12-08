@@ -22,7 +22,7 @@ const Popular = () => {
                     <div className="card-body text-center">
                         <h2 className="text-lg font-semibold">Intense running shoes</h2>
                         <div className="flex justify-center gap-2 mt-2">
-                            {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
+                            {[ 36, 38, 40, 42, 44].map((size) => (
                                 <span
                                     key={size}
                                     className="border border-gray-300 rounded-md px-2 py-1 text-sm"
@@ -98,7 +98,7 @@ const Popular = () => {
                     <div className="card-body text-center">
                         <h2 className="text-lg font-semibold">Running shoes</h2>
                         <div className="flex justify-center gap-2 mt-2">
-                            {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
+                            {[ 36, 38, 40, 42, 44].map((size) => (
                                 <span
                                     key={size}
                                     className="border border-gray-300 rounded-md px-2 py-1 text-sm"
