@@ -1,8 +1,8 @@
-- **Dream Sports Shop**
-- **https://stunning-gnome-622d84.netlify.app/allEquipment**
+## **Dream Sports Shop**
+ **https://stunning-gnome-622d84.netlify.app/**
 
 
-- **Five features of my  website...**
+## **Five features of my  website...**
 
 - **1. This site has two theme. Dark mode and the normal mode. in the navbar there is a con of moon by clicking the moon dark mode will be appear and a sun icon replace the moon icon and then by clicking the sun icon user can back to the normal light theme.**
 
