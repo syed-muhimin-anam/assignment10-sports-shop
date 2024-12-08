@@ -48,10 +48,10 @@ const AddEquipment = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-10 px-4">
+    <div className="min-h-screen flex items-center justify-center  px-4">
       <div className="max-w-4xl w-full  rounded-lg shadow-lg p-8">
       
-        <h1 className="text-2xl md:text-3xl font-bold  mb-6 text-center">
+        <h1 className="text-2xl md:text-3xl font-bold  my-10 text-center">
           Add New Equipment
         </h1>
         <form onSubmit={handleAddEquipment} className="grid grid-cols-1 md:grid-cols-2 gap-6">

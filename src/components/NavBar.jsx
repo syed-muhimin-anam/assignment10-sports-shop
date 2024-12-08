@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../providers/AuthProviders'; import Swal from 'sweetalert2'
-import { Tooltip } from 'react-tooltip'
+import { AuthContext } from '../providers/AuthProviders';
+import Swal from 'sweetalert2';
+import { Tooltip } from 'react-tooltip';
 
 const NavBar = () => {
-    const [theme, setTheme] = useState(true)
+    const [theme, setTheme] = useState(true);
     const item = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='allEquipment'>All Sports Equipment</NavLink></li>
@@ -29,7 +30,7 @@ const NavBar = () => {
         });
         Toast.fire({
             icon: "success",
-            title: "Loged Out successfully"
+            title: "Logged Out successfully"
         });
     };
 
@@ -37,14 +38,12 @@ const NavBar = () => {
         const htmlElement = document.documentElement;
         if (htmlElement.getAttribute("data-theme") === "light") {
             htmlElement.removeAttribute("data-theme");
-            setTheme(false)
+            setTheme(false);
         } else {
             htmlElement.setAttribute("data-theme", "light");
-            setTheme(true)
+            setTheme(true);
         }
     };
-
-
 
     return (
         <div className="navbar bg-base-100">
@@ -78,19 +77,18 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex items-center space-x-1 md:space-x-4">
-
                 <button onClick={toggleTheme} className="btn btn-xs md:btn-md">
                     {theme === true ? "Dark Mode" : "Light Mode"}
                 </button>
-
-
                 {
                     user && user.email ? (
                         <>
-                            <div className="relative group" 
-                            data-tooltip-id="my-tooltip"
+                            <div
+                                className="relative group z-[50]"
+                                data-tooltip-id="my-tooltip"
                                 data-tooltip-content={user.displayName}
-                                data-tooltip-place="top">
+                                data-tooltip-place="bottom"
+                            >
                                 <div role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
                                         <img
@@ -99,7 +97,6 @@ const NavBar = () => {
                                         />
                                     </div>
                                 </div>
-
                             </div>
                             <button onClick={handleLogout} className="btn btn-xs md:btn-md">Logout</button>
                         </>
@@ -111,7 +108,10 @@ const NavBar = () => {
                     )
                 }
             </div>
-            <Tooltip id="my-tooltip" />
+            <Tooltip
+                id="my-tooltip"
+                style={{ zIndex: 9999 }}
+            />
         </div>
     );
 };

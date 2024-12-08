@@ -51,7 +51,7 @@ const MyEquipment = () => {
 
     return (
         <div>
-            <h1>My Equipment: Total - {myItem.length}</h1>
+            <h1 className="text-4xl text-center my-10">My Equipment: Total - {myItem.length}</h1>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
                 {myItem.map((equipment) => (
                     <div key={equipment._id} className="">

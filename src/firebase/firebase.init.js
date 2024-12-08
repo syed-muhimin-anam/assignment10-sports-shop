@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCQipnwsiTcjVm4Dj7rpRJQfxzsFRaYoFE",
-  authDomain: "dream-sports-shop.firebaseapp.com",
-  projectId: "dream-sports-shop",
-  storageBucket: "dream-sports-shop.firebasestorage.app",
-  messagingSenderId: "424586149726",
-  appId: "1:424586149726:web:0fd10ec940c3d0eec919cf"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
