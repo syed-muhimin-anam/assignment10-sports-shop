@@ -17,7 +17,7 @@ const Update = () => {
      event.target.category.value === "" ? loadedEquipment.category : event.target.category.value;
     const description = event.target.description.value === "" ? loadedEquipment.description : event.target.description.value;
     const rating = event.target.rating.value === "" ? loadedEquipment.rating : event.target.rating.value;
-    const price = event.target.price.value === "" ? loadedEquipment.price :  parseFloat(event.target.rating.value);
+    const price = event.target.price.value === "" ? loadedEquipment.price :  parseFloat(event.target.price.value);
     const customization = event.target.customization.value === "" ? loadedEquipment.customization : event.target.customization.value;
     const time = event.target.time.value === "" ? loadedEquipment.time : event.target.time.value;
     const stock = event.target.stock.value === "" ? loadedEquipment.stock : event.target.stock.value;
