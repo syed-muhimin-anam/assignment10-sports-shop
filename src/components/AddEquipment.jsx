@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { Tooltip } from 'react-tooltip'
+
 
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate()
-  
+
 
   const handleAddEquipment = (event) => {
     event.preventDefault();
@@ -50,16 +50,7 @@ const AddEquipment = () => {
   return (
     <div className="min-h-screen flex items-center justify-center py-10 px-4">
       <div className="max-w-4xl w-full  rounded-lg shadow-lg p-8">
-        <a
-          data-tooltip-id="my-tooltip"
-          data-tooltip-content="Hello world!"
-          data-tooltip-place="top"
-        >
-          ◕‿‿◕
-        </a>
-        <a data-tooltip-id="my-tooltip" data-tooltip-content="Hello to you too!">
-          ◕‿‿◕
-        </a>
+      
         <h1 className="text-2xl md:text-3xl font-bold  mb-6 text-center">
           Add New Equipment
         </h1>
@@ -196,7 +187,7 @@ const AddEquipment = () => {
           </div>
         </form>
       </div>
-      <Tooltip id="my-tooltip" />
+
     </div>
   );
 };

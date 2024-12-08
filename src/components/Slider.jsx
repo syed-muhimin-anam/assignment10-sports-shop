@@ -13,6 +13,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { FaPlus } from 'react-icons/fa';
+import { Fade } from 'react-awesome-reveal';
 
 const Slider = () => {
   return (
@@ -32,6 +33,7 @@ const Slider = () => {
       >
         {/* First Slide */}
         <SwiperSlide className="h-[300px] md:h-[400px] lg:h-[500px] relative">
+          <Fade>
           <div
             className="w-full flex justify-center items-center px-4 md:px-12"
             style={{
@@ -68,10 +70,12 @@ const Slider = () => {
               </div>
             </div>
           </div>
+          </Fade>
         </SwiperSlide>
 
         {/* Second Slide */}
         <SwiperSlide className="h-[300px] md:h-[400px] lg:h-[500px] relative">
+          <Fade>
           <div
             className="w-full flex justify-center items-center px-12"
             style={{
@@ -108,10 +112,12 @@ const Slider = () => {
               </div>
             </div>
           </div>
+          </Fade>
         </SwiperSlide>
 
         {/* Third Slide */}
         <SwiperSlide className="h-[300px] md:h-[400px] lg:h-[500px] relative">
+          <Fade>
           <div
             className="w-full flex justify-center items-center px-4 md:px-12"
             style={{
@@ -148,6 +154,7 @@ const Slider = () => {
               </div>
             </div>
           </div>
+          </Fade>
         </SwiperSlide>
       </Swiper>
     </div>

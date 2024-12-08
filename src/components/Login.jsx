@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 import Swal from 'sweetalert2'
+import { Fade } from "react-awesome-reveal";
 
 const Login = () => {
     const { googleSignin, userLogIn, setUser } = useContext(AuthContext);
@@ -75,6 +76,7 @@ const handleGoogle = e => {
 
     return (
         <div className="md:w-8/12 mx-auto">
+            <Fade>
             <form onSubmit={handleLogin} className="card-body">
                 <div className="form-control">
                     <label className="label">
@@ -98,6 +100,7 @@ const handleGoogle = e => {
                     <p>Don't have any account? <Link className="underline text-lime-400" to='/signup'>SIgnUp</Link></p>
                 </div>
             </form>
+            </Fade>
         </div>
     );
 };

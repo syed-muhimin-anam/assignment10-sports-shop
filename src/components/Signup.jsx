@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { Fade } from "react-awesome-reveal";
+
 
 
 
@@ -93,6 +95,7 @@ const Signup = () => {
     }
     return (
         <div className="md:w-8/12 mx-auto">
+            <Fade >
              <form onSubmit={handleCreateUser} className="card-body">
                 <div className="form-control">
                     <label className="label">
@@ -124,7 +127,7 @@ const Signup = () => {
                     <p>Already have an account? <Link className="underline text-lime-400" to='/login'>Login</Link></p>
                 </div>
             </form>
-            
+            </Fade>
         </div>
     );
 };
