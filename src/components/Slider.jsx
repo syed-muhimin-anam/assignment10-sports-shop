@@ -8,7 +8,7 @@ import sliderbg2 from '../assets/sliderbg-2.png';
 import sliderbg3 from '../assets/sliderbg-3.png';
 import './Slider.css'; 
 
-// Import Swiper styles
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';

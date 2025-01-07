@@ -32,7 +32,7 @@ const ProductSection = ({ productData }) => {
               style={{
                 backgroundColor: '#87c451',
                 color: '#fff',
-                fontSize: '0.875rem', // Small font size for the button
+                fontSize: '0.875rem',
               }}
             >
               View Details

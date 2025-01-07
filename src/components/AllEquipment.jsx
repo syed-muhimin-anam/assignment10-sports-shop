@@ -33,20 +33,20 @@ const EquipmentCards = () => {
             key={product._id}
             className="card rounded-lg bg-base-100 shadow-lg mx-auto w-full flex flex-col"
             style={{
-              height: "450px", // Fixed height for uniform cards
+              height: "450px",
               maxWidth: "280px",
             }}
           >
             <figure
               className="w-full h-48 overflow-hidden flex items-center justify-center"
               style={{
-                backgroundColor: "#f9f9f9", // Subtle background for images
+                backgroundColor: "#f9f9f9",
               }}
             >
               <img
                 src={product.photo}
                 alt={product.item}
-                className="w-auto h-full object-contain" // Ensures the image is centered and maintains aspect ratio
+                className="w-auto h-full object-contain"
               />
             </figure>
             <div className="card-body p-4 flex-grow">
