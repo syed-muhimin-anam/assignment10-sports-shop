@@ -12,6 +12,7 @@ const NavBar = () => {
         <li><NavLink to='allEquipment'>All Sports Equipment</NavLink></li>
         <li><NavLink to='addEquipment'>Add Equipment</NavLink></li>
         <li><NavLink to='myEquipment'>My Equipment</NavLink></li>
+        <li><NavLink to='about'>About Us</NavLink></li>
     </>;
 
     const { user, logout } = useContext(AuthContext);
@@ -34,6 +35,7 @@ const NavBar = () => {
             title: "Logged Out successfully"
         });
     };
+    
 
     const toggleTheme = () => {
         const htmlElement = document.documentElement;
@@ -47,7 +49,8 @@ const NavBar = () => {
     };
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar  fixed top-0 left-0 z-50 px-14 bg-[#87c451]">
+
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={50} role="button" className="btn btn-ghost lg:hidden">
@@ -78,12 +81,14 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex items-center space-x-1 md:space-x-4">
-                <button onClick={toggleTheme} className={`rounded-full p-2 ${theme ? 'bg-slate-300' : 'bg-slate-900'}`}>
+                {/* <button onClick={toggleTheme} className={`rounded-full p-2 ${theme ? 'bg-slate-300' : 'bg-slate-900'}`}>
                     {theme === true ? <FaMoon></FaMoon> : <FaSun></FaSun>}
-                </button>
+                </button> */}
                 {
                     user && user.email ? (
                         <>
+                            
+                            <button onClick={handleLogout} className="font-bold">Logout</button>
                             <div
                                 className="relative group z-[50]"
                                 data-tooltip-id="my-tooltip"
@@ -99,12 +104,11 @@ const NavBar = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button onClick={handleLogout} className="btn btn-xs md:btn-md">Logout</button>
                         </>
                     ) : (
                         <>
-                            <Link to='/login'><button className="btn btn-xs md:btn-md">Sign in</button></Link>
-                            <Link to='/signup'><button className='btn btn-xs md:btn-md'>Register</button></Link>
+                            <Link to='/login'><button className=" font-bold">Sign in</button></Link>
+                            <Link to='/signup'><button className='font-bold'>Register</button></Link>
                         </>
                     )
                 }

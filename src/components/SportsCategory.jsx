@@ -7,7 +7,7 @@ import { Fade } from "react-awesome-reveal";
 
 const SportsCategory = () => {
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 ">
             {/* Applying Fade for bottom-to-top animation */}
             <Fade direction="right">
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -22,7 +22,7 @@ const SportsCategory = () => {
                             <h3 className="text-white text-lg font-semibold">Tennis sport</h3>
                             <a
                                 href="#"
-                                className="text-orange-500 text-sm mt-2 underline hover:text-orange-400"
+                                className="text-[#8ffa32] text-sm mt-2 underline hover:text-orange-400"
                             >
                                 Go to category
                             </a>
@@ -40,7 +40,7 @@ const SportsCategory = () => {
                             <h3 className="text-white text-lg font-semibold">Gymnastic</h3>
                             <a
                                 href="#"
-                                className="text-orange-500 text-sm mt-2 underline hover:text-orange-400"
+                                className="text-[#8ffa32] text-sm mt-2 underline hover:text-orange-400"
                             >
                                 Go to category
                             </a>
@@ -58,7 +58,7 @@ const SportsCategory = () => {
                             <h3 className="text-white text-lg font-semibold">Cycling</h3>
                             <a
                                 href="#"
-                                className="text-orange-500 text-sm mt-2 underline hover:text-orange-400"
+                                className="text-[#8ffa32] text-sm mt-2 underline hover:text-orange-400"
                             >
                                 Go to category
                             </a>
@@ -76,7 +76,7 @@ const SportsCategory = () => {
                             <h3 className="text-white text-lg font-semibold">Running</h3>
                             <a
                                 href="#"
-                                className="text-orange-500 text-sm mt-2 underline hover:text-orange-400"
+                                className="text-[#8ffa32] text-sm mt-2 underline hover:text-orange-400"
                             >
                                 Go to category
                             </a>

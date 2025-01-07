@@ -10,6 +10,7 @@ import {
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../firebase/firebase.init';
 
+// Create the context
 export const AuthContext = createContext(null);
 
 const AuthProviders = ({ children }) => {
@@ -33,11 +34,12 @@ const AuthProviders = ({ children }) => {
         setLoading(true);
         return signOut(auth);
     };
-    // login with email and password
+
+    // Login with email and password
     const userLogIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
-    }
+    };
 
     // Google Sign-in
     const googleSignin = () => {
@@ -45,7 +47,6 @@ const AuthProviders = ({ children }) => {
         const provider = new GoogleAuthProvider();
         return signInWithPopup(auth, provider);
     };
-
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -65,7 +66,7 @@ const AuthProviders = ({ children }) => {
         updateUserProfile,
         logout,
         googleSignin,
-        userLogIn
+        userLogIn,
     };
 
     return (

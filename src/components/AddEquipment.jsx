@@ -48,21 +48,21 @@ const AddEquipment = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center  px-4">
+    <div className="min-h-screen flex items-center justify-center  px-4 pt-20">
       <div className="max-w-4xl w-full  rounded-lg shadow-lg p-8">
 
-        <h1 className="text-2xl md:text-3xl font-bold  my-10 text-center">
+        <h1 className="text-2xl  text-[#578a29] md:text-4xl font-bold  my-10 text-center">
           Add New Equipment
         </h1>
         <form onSubmit={handleAddEquipment} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Photo URL */}
           <div>
-            <label className="block  font-medium mb-1">Photo URL</label>
+            <label className="block  font-medium mb-1 ">Photo URL</label>
             <input
               type="text"
               name="photo"
               placeholder="Enter photo URL"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#87c451]"
               required
             />
           </div>
@@ -73,7 +73,7 @@ const AddEquipment = () => {
               type="text"
               name="item"
               placeholder="Enter item name"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#87c451]"
               required
             />
           </div>
@@ -84,7 +84,7 @@ const AddEquipment = () => {
               type="text"
               name="category"
               placeholder="Enter category name"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#87c451]"
               required
             />
           </div>
@@ -95,7 +95,7 @@ const AddEquipment = () => {
               type="text"
               name="description"
               placeholder="Enter description"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#87c451]"
               required
             />
           </div>
@@ -106,7 +106,7 @@ const AddEquipment = () => {
               type="text"
               name="price"
               placeholder="Enter price"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#87c451]"
               required
             />
           </div>
@@ -117,7 +117,7 @@ const AddEquipment = () => {
               type="text"
               name="rating"
               placeholder="Enter rating"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#87c451]"
               required
             />
           </div>
@@ -128,7 +128,7 @@ const AddEquipment = () => {
               type="text"
               name="customization"
               placeholder="Enter customization details"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#87c451]"
               required
             />
           </div>
@@ -139,7 +139,7 @@ const AddEquipment = () => {
               type="text"
               name="time"
               placeholder="Enter processing time"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#87c451]"
               required
             />
           </div>
@@ -150,7 +150,7 @@ const AddEquipment = () => {
               type="text"
               name="stock"
               placeholder="Enter stock status"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#87c451]"
               required
             />
           </div>
@@ -180,7 +180,7 @@ const AddEquipment = () => {
           <div className="col-span-1 md:col-span-2 mt-4">
             <button
               type="submit"
-              className="w-full py-3 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-400"
+              className="w-full py-3 bg-[#87c451] rounded-lg hover:bg-[#66923f] focus:ring-2 focus:ring-blue-400"
             >
               Add Equipment
             </button>

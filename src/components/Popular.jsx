@@ -7,7 +7,7 @@ import { Fade } from 'react-awesome-reveal';
 const Popular = () => {
     return (
         <div className="container mx-auto px-4 py-10">
-            <h1 className="text-2xl font-bold text-center mb-6">Most Popular Products</h1>
+            <h1 className="my-20 text-4xl text-center  text-[#7eb84b] font-bold">Most Popular Products</h1>
             <Fade direction='left'>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {/* Card 1 */}
@@ -33,15 +33,15 @@ const Popular = () => {
                             </div>
                             <div className="flex items-center justify-center mt-2">
                                 <div className="rating">
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
                                     <input
                                         type="radio"
                                         name="rating-2"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-[#73aa44]"
                                         defaultChecked />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
                                 </div>
                             </div>
                             <p className="text-xl font-bold text-red-500 mt-2">$178.00</p>
@@ -71,15 +71,15 @@ const Popular = () => {
                             </div>
                             <div className="flex items-center justify-center mt-2">
                                 <div className="rating">
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
                                     <input
                                         type="radio"
                                         name="rating-2"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-[#73aa44]"
                                         defaultChecked />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
                                 </div>
                             </div>
                             <p className="text-xl font-bold text-red-500 mt-2">$48.00</p>
@@ -109,15 +109,15 @@ const Popular = () => {
                             </div>
                             <div className="flex items-center justify-center mt-2">
                                 <div className="rating">
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
                                     <input
                                         type="radio"
                                         name="rating-2"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-[#73aa44]"
                                         defaultChecked />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
                                 </div>
                             </div>
                             <p className="text-xl font-bold text-red-500 mt-2">$235.00</p>
@@ -147,15 +147,15 @@ const Popular = () => {
                             </div>
                             <div className="flex items-center justify-center mt-2">
                                 <div className="rating">
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
                                     <input
                                         type="radio"
                                         name="rating-2"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-[#73aa44]"
                                         defaultChecked />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#73aa44]" />
                                 </div>
                             </div>
                             <p className="text-xl font-bold text-red-500 mt-2">$75.00</p>

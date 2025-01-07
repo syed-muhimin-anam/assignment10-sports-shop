@@ -1,0 +1,16 @@
+/* Custom styles for Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #87c451; /* Change this to your desired color */
+}
+
+/* Custom styles for Swiper pagination dots */
+.swiper-pagination-bullet {
+  background-color: #6d8d5180; /* Change this to your desired color */
+  opacity: 0.7;
+}
+
+/* Active pagination dot */
+.swiper-pagination-bullet-active {
+  background-color: #0eaf13; /* A slightly different shade for the active dot */
+}

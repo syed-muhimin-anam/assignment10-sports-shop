@@ -13,10 +13,10 @@ const Articles = () => {
                     />
                 </figure>
                 <div className="card-body w-2/3">
-                    <h2 className="card-title text-lg font-bold">Embracing Wellness: The Perfect Escape with Yoga</h2>
+                    <h2 className="card-title text-lg font-bold text-[#73aa44]">Embracing Wellness: The Perfect Escape with Yoga</h2>
                     <p className="text-sm">Discover the rejuvenating experience of yoga by the sea, where tranquility meets strength. Join us as we explore the benefits of outdoor practice and how it connects your mind and body to nature.</p>
                     <div className="card-actions justify-end mt-4">
-                        <button className="btn btn-primary">Read More..</button>
+                        <button className="btn  bg-[#87c451]">Read More..</button>
                     </div>
                 </div>
             </div>
@@ -30,10 +30,10 @@ const Articles = () => {
                     />
                 </figure>
                 <div className="card-body w-2/3">
-                    <h2 className="card-title text-lg font-bold">The Thrill of the Race: Pushing Limits on Two Wheels!</h2>
+                    <h2 className="card-title text-lg font-bold text-[#73aa44]">The Thrill of the Race: Pushing Limits on Two Wheels!</h2>
                     <p className="text-sm">Feel the rush of adrenaline and the competitive spirit of cycling as athletes push their limits in a race. Learn about the dedication and training needed to excel in this high-paced sport.</p>
                     <div className="card-actions justify-end mt-4">
-                        <button className="btn btn-primary">Read More..</button>
+                        <button className="btn  bg-[#87c451]">Read More..</button>
                     </div>
                 </div>
             </div>

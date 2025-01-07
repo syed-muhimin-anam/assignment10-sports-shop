@@ -61,7 +61,7 @@ const Update = () => {
   return (
     <div className="min-h-screen flex items-center justify-center py-10 px-4">
       <div className="w-full max-w-3xl">
-        <h1 className="text-center text-2xl font-semibold mb-8">Update Equipment</h1>
+        <h1 className="text-center text-2xl md:text-4xl font-semibold my-20 text-[#578a29]">Update Equipment</h1>
 
 
         {/* Update Form */}
@@ -73,7 +73,7 @@ const Update = () => {
               type="text"
               name="photo"
               placeholder={loadedEquipment.photo}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-[#87c451]"
             />
           </div>
 
@@ -84,7 +84,7 @@ const Update = () => {
               type="text"
               name="item"
               placeholder={loadedEquipment.item}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-[#87c451]"
             />
           </div>
 
@@ -95,7 +95,7 @@ const Update = () => {
               type="text"
               name="category"
               placeholder={loadedEquipment.category}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-[#87c451]"
             />
           </div>
 
@@ -106,7 +106,7 @@ const Update = () => {
               type="text"
               name="description"
               placeholder={loadedEquipment.description}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-[#87c451]"
             />
           </div>
 
@@ -117,7 +117,7 @@ const Update = () => {
               type="text"
               name="price"
               placeholder={loadedEquipment.price}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-[#87c451]"
             />
           </div>
 
@@ -128,7 +128,7 @@ const Update = () => {
               type="text"
               name="rating"
               placeholder={loadedEquipment.rating}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-[#87c451]"
             />
           </div>
 
@@ -139,7 +139,7 @@ const Update = () => {
               type="text"
               name="customization"
               placeholder={loadedEquipment.customization}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-[#87c451]"
             />
           </div>
 
@@ -150,7 +150,7 @@ const Update = () => {
               type="text"
               name="time"
               placeholder={loadedEquipment.time}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-[#87c451]"
             />
           </div>
 
@@ -161,7 +161,7 @@ const Update = () => {
               type="text"
               name="stock"
               placeholder={loadedEquipment.stock}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-[#87c451]"
             />
           </div>
 
@@ -193,7 +193,7 @@ const Update = () => {
           <div className="col-span-1 md:col-span-2">
             <button
               type="submit"
-              className="w-full py-3 mt-4 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600 focus:ring focus:ring-blue-400"
+              className="w-full py-3 mt-4 rounded-lg  bg-[#87c451] font-medium hover:bg-[#599029] focus:ring focus:ring-blue-400"
             >
               Update Equipment
             </button>

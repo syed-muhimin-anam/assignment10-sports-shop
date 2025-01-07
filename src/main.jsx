@@ -17,6 +17,7 @@ import Signup from './components/Signup';
 import Update from './components/Update';
 import PrivateROuter from './components/PrivateROuter';
 import ErrorPage from './components/ErrorPage';
+import About from './About';
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup></Signup>,
+      },
+      {
+        path: "about",
+        element: <About></About>,
       },
       {
         path: "/allEquipment",
